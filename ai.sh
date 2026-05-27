@@ -102,6 +102,17 @@ fi
 # Set default user name if not provided
 USER=${USER:-user}
 
+# Thinking spinner shown while waiting for API response
+_spinner() {
+  local frames=('⠋' '⠙' '⠹' '⠸' '⠼' '⠴' '⠦' '⠧' '⠇' '⠏')
+  while true; do
+    for frame in "${frames[@]}"; do
+      printf "\r\033[2m🤖 %s\033[0m" "$frame"
+      sleep 0.08
+    done
+  done
+}
+
 while true; do
   # Interactive user input
   read -e -p "🧑 $USER: " USER_INPUT
@@ -125,6 +136,10 @@ while true; do
   done
   JSON_MESSAGES="${JSON_MESSAGES%,}]"
 
+  # Show thinking spinner while waiting for API response
+  _spinner &
+  SPINNER_PID=$!
+
   # API request
   RESPONSE=$(curl -s https://openrouter.ai/api/v1/chat/completions \
     -H "Authorization: Bearer $OPENROUTER_API_KEY" \
@@ -133,6 +148,11 @@ while true; do
       \"model\": \"$OPENROUTER_MODEL\",
       \"messages\": $JSON_MESSAGES
     }")
+
+  # Stop spinner and clear the line
+  kill "$SPINNER_PID" 2>/dev/null
+  wait "$SPINNER_PID" 2>/dev/null
+  printf "\r\033[K"
 
   # Check for API errors; if found, show error message and, if DEBUG=true, display full JSON response for troubleshooting.
   # Skip saving error responses to chat history.
