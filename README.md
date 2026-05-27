@@ -76,8 +76,7 @@ sudo apt install jq
 3. **Get your OpenRouter API key:**
    - Go to [OpenRouter.ai](https://openrouter.ai/)
    - Sign up with your Github account for a free account
-   - Navigate to models and then the Mistral Small 3.2 24B (free) 
-   - Click API keys section
+   - Navigate to the API keys section
    - Generate a new API key
 
 4. **Configure your API key and model:**
@@ -161,12 +160,12 @@ $ ai
 
 🧑 cerebrux: What's the capital of Greece?
 
-🤖 Mistral AI:
+🤖 Llama AI:
 Athens is both the historical heart and the modern capital of Greece
 
 🧑 cerebrux: Did they have a co-capital there?
 
-🤖 Mistral AI:
+🤖 Llama AI:
 Thessaloniki is widely recognized as Greece's "second city" due to its size and economic 
 power.
 The term "co-capital" (**συμπρωτεύουσα** - symprotévousa) when applied to Thessaloniki 
@@ -215,10 +214,10 @@ You can change the AI model by editing the `OPENROUTER_MODEL` variable in your `
 OPENROUTER_MODEL=
 
 # Example:
-OPENROUTER_MODEL=qwen/qwq-32b:free
+OPENROUTER_MODEL=meta-llama/llama-3.3-70b-instruct:free
 ```
 
-**Note:** If `OPENROUTER_MODEL` is not set or left empty, the script will use the default Mistral model. Do not edit `.models` directly.
+**Note:** If `OPENROUTER_MODEL` is not set or left empty, the script will use the default model (`meta-llama/llama-3.3-70b-instruct:free`). Do not edit `.models` directly.
 
 ### Common Issues
 
