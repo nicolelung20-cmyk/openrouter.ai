@@ -138,7 +138,10 @@ while true; do
   # Skip saving error responses to chat history.
   ERROR_MSG=$(echo "$RESPONSE" | jq -r '.error.message // empty')
   if [[ -n "$ERROR_MSG" ]]; then
-    echo -e "\n❌ API Error: $ERROR_MSG\n"
+    ERROR_RAW=$(echo "$RESPONSE" | jq -r '.error.metadata.raw // empty')
+    echo -e "\n❌ API Error: $ERROR_MSG"
+    [[ -n "$ERROR_RAW" ]] && echo -e "   ↳ $ERROR_RAW"
+    echo
     if [[ "$DEBUG" == "true" ]]; then
       echo "🔍 Full response for debugging:"
       echo "$RESPONSE" | jq .
