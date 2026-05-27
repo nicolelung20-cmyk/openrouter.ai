@@ -27,4 +27,12 @@ grep -Eo '^[a-z0-9._/-]+:free' .models | while read slug; do
 done
 
 echo ""
+echo "=== Free :free models on OpenRouter NOT in .models ==="
+echo "$FREE_IDS" | grep ':free$' | while read slug; do
+    if ! grep -q "^$slug" .models; then
+        echo "ADD: $slug"
+    fi
+done
+
+echo ""
 echo "=== Done ==="
