@@ -4,30 +4,21 @@
 
 ############### OpenRouter Modes ###############
 # If you want to use a specific model, copy one of the lines below and put it in the OPENROUTER_MODEL= of your .env file.
-# If not set, it will default to "OPENROUTER_MODEL=meta-llama/llama-3.3-70b-instruct:free"
+# If not set, it will default to "OPENROUTER_MODEL=openrouter/free" (OpenRouter's auto-router that always picks a currently free model)
 # You can also set it to any model available on OpenRouter: https://openrouter.ai/models
 # Additional free models commonly available on OpenRouter : 
 
-baidu/cobuddy:free                           # Categories: Code, Agents. Description: Baidu's CoBuddy assistant model for agentic coding, task automation, and general-purpose text generation.
-cognitivecomputations/dolphin-mistral-24b-venice-edition:free # Categories: Uncensored, Roleplay, Creative. Description: Uncensored 24B Mistral-based Dolphin model (Venice edition) designed for unrestricted and aligned outputs.
-deepseek/deepseek-v4-flash:free              # Categories: Code, Reasoning, General NLP. Description: Fast, low-latency variant of DeepSeek V4 optimized for rapid inference while preserving strong reasoning quality.
+cohere/north-mini-code:free                  # Categories: Code, Agents. Description: Compact Cohere North model tuned for code generation, completion, and lightweight coding assistant tasks.
 google/gemma-4-26b-a4b-it:free               # Categories: Agents, Logic, General NLP. Description: Mixture-of-Experts (MoE) model delivering high-quality reasoning and native function calling at a fraction of compute cost.
 google/gemma-4-31b-it:free                   # Categories: Complex Reasoning, Math, Code. Description: Dense multimodal model featuring a 256K context window, configurable thinking mode, and strong document understanding.
-liquid/lfm-2.5-1.2b-instruct:free            # Categories: Edge Computing, Chat. Description: Compact 1.2B instruction-tuned model built for fast on-device AI and strong conversational quality.
-liquid/lfm-2.5-1.2b-thinking:free            # Categories: Logic, Agents. Description: Lightweight reasoning-focused model optimized for agentic tasks, data extraction, and RAG on edge devices.
-meta-llama/llama-3.2-3b-instruct:free        # Categories: Mobile, Dialogue, General NLP. Description: Multilingual 3B model optimized for on-device natural language processing, summarization, and instruction-following.
-meta-llama/llama-3.3-70b-instruct:free       # Categories: Code, Math, Logic, Dialogue. Description: Highly capable 70B model optimized for multilingual dialogue, complex logic, and deep reasoning tasks.
-minimax/minimax-m2.5:free                    # Categories: Agents, Roleplay, Productivity. Description: SOTA model trained for real-world productivity, office work (Word, Excel), and multi-agent collaboration.
-nousresearch/hermes-3-llama-3.1-405b:free    # Categories: Uncensored, Roleplay, Agents. Description: Hermes 3 on Llama 3.1 405B focused on user alignment, powerful steering, and unrestricted agentic workflows.
+inclusionai/ling-3.0-flash:free               # Categories: General NLP, Speed, Agents. Description: Fast, low-latency Ling 3.0 variant optimized for quick responses in high-throughput agentic workflows.
 nvidia/nemotron-3-nano-30b-a3b:free          # Categories: Agents, Logic, Automation. Description: Highly efficient small MoE model designed for building specialized, privacy-focused agentic AI systems.
 nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free # Categories: Multimodal, Agents, Reasoning. Description: Omni-modal perception model handling text, image, video, and audio inputs with an added reasoning inference mode.
 nvidia/nemotron-3-super-120b-a12b:free       # Categories: Agents, Complex Reasoning. Description: 120B open hybrid MoE model with a 1M token context, excelling at multi-step task planning and coherence.
+nvidia/nemotron-3-ultra-550b-a55b:free       # Categories: Agents, Complex Reasoning. Description: Massive 550B hybrid MoE flagship model offering top-tier reasoning and long-context task planning.
+nvidia/nemotron-3.5-content-safety:free      # Categories: Moderation, Safety. Description: Specialized model for content moderation and safety classification of text inputs.
 nvidia/nemotron-nano-12b-v2-vl:free          # Categories: Vision, OCR, Document Analysis. Description: Updated v2 vision-language model for high-fidelity video understanding, chart reasoning, and OCR tasks.
 nvidia/nemotron-nano-9b-v2:free              # Categories: General NLP, Logic. Description: Unified reasoning model that can dynamically generate internal thought traces before answering user queries.
-openai/gpt-oss-120b:free                     # Categories: Code, Finance, Agents. Description: Open-weight 117B MoE model offering configurable reasoning depth, native tool use, and structured outputs.
 openai/gpt-oss-20b:free                      # Categories: Finance, Marketing, Agents. Description: Fast, lower-latency 21B MoE model optimized for function calling, structured outputs, and general automation.
-poolside/laguna-m.1:free                     # Categories: Code, Software Engineering, Agents. Description: Flagship coding agent optimized for complex software engineering, tool calling, and codebase management.
-poolside/laguna-xs.2:free                    # Categories: Code, Automation. Description: Second-generation compact coding model combining tool calling and reasoning with high speed and cost efficiency.
-qwen/qwen3-coder:free                        # Categories: Code, Agents, Logic. Description: Streamlined Qwen3 Coder MoE model optimized for function calling and long-context reasoning over large codebases.
-qwen/qwen3-next-80b-a3b-instruct:free        # Categories: Math, Code, Logic, Agents. Description: High-throughput 80B model targeting complex tasks across reasoning and multilingual use without visible CoT traces.
-z-ai/glm-4.5-air:free                        # Categories: Roleplay, Agents, Code. Description: Lightweight agent-centric model offering hybrid inference modes (thinking/non-thinking) for dynamic real-time use.
+poolside/laguna-s-2.1:free                   # Categories: Code, Software Engineering, Agents. Description: Mid-tier Laguna 2.1 coding agent balancing capability and speed for software engineering tasks.
+poolside/laguna-xs-2.1:free                  # Categories: Code, Automation. Description: Compact Laguna 2.1 model combining tool calling and reasoning with high speed and cost efficiency.

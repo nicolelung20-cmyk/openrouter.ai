@@ -83,7 +83,7 @@ fi
 
 # Default AI Model
 if [[ -z "$OPENROUTER_MODEL" ]]; then
-  OPENROUTER_MODEL="meta-llama/llama-3.3-70b-instruct:free"
+  OPENROUTER_MODEL="openrouter/free"
 fi
 
 mkdir -p "$CHAT_LOG_DIR"

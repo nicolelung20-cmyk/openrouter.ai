@@ -217,7 +217,7 @@ OPENROUTER_MODEL=
 OPENROUTER_MODEL=meta-llama/llama-3.3-70b-instruct:free
 ```
 
-**Note:** If `OPENROUTER_MODEL` is not set or left empty, the script will use the default model (`meta-llama/llama-3.3-70b-instruct:free`). Do not edit `.models` directly.
+**Note:** If `OPENROUTER_MODEL` is not set or left empty, the script will use the default model (`openrouter/free`, OpenRouter's auto-router that always resolves to a currently free model). Do not edit `.models` directly.
 
 ### Common Issues
 
