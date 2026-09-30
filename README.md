@@ -217,6 +217,14 @@ OPENROUTER_MODEL=
 OPENROUTER_MODEL=meta-llama/llama-3.3-70b-instruct:free
 ```
 
+To use Claude Opus via OpenRouter (paid; requires credits), set:
+
+```bash
+OPENROUTER_MODEL=anthropic/claude-opus-latest
+```
+
+Requests go to `https://openrouter.ai/api/v1` by default (override with `OPENROUTER_BASE_URL`), authenticated with `OPENROUTER_API_KEY` from your `.env`.
+
 **Note:** If `OPENROUTER_MODEL` is not set or left empty, the script will use the default model (`openrouter/free`, OpenRouter's auto-router that always resolves to a currently free model). Do not edit `.models` directly.
 
 ### Common Issues

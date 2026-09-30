@@ -86,6 +86,9 @@ if [[ -z "$OPENROUTER_MODEL" ]]; then
   OPENROUTER_MODEL="openrouter/free"
 fi
 
+# OpenRouter API base URL (override only if needed)
+OPENROUTER_BASE_URL="${OPENROUTER_BASE_URL:-https://openrouter.ai/api/v1}"
+
 mkdir -p "$CHAT_LOG_DIR"
 
 # Initialize conversation history array
@@ -141,7 +144,7 @@ while true; do
   SPINNER_PID=$!
 
   # API request
-  RESPONSE=$(curl -s https://openrouter.ai/api/v1/chat/completions \
+  RESPONSE=$(curl -s "$OPENROUTER_BASE_URL/chat/completions" \
     -H "Authorization: Bearer $OPENROUTER_API_KEY" \
     -H "Content-Type: application/json" \
     -d "{
